@@ -17,7 +17,7 @@ jobs:
       run: docker build -t my_chess_engine .
 
     - name: Run Container
-      run: docker run --name chess_engine_instance -d my_chess_engine
+      run: docker run --name chess_engine_instance -d my_chess_engine tail -f /dev/null
 
     - name: Execute Tests
       run: docker exec chess_engine_instance /usr/src/app/tests/EngineStarterTest/EngineStarterTest
